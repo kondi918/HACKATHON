@@ -3279,6 +3279,7 @@ MonoBehaviour:
   characterDB: {fileID: 11400000, guid: fd49c4107297a4d41a2028f89f07580e, type: 2}
   movementSpeed: 0.3
   rb: {fileID: 503886345611829177}
+  animator: {fileID: 8610827467456417291}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0
