@@ -40,7 +40,8 @@ public class UIController : MonoBehaviour
         }
         updateCoins(coinquan);
         if (Input.GetKeyDown(KeyCode.S)) { 
-            coinquan--; 
+            coinquan--;
+            addHearth();
         }
 
     }

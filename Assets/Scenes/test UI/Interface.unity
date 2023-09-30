@@ -459,7 +459,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d6c25afa3e8e9b3408f0809e4180d4f5, type: 3}
   - {fileID: 21300000, guid: 7eec205dbed98ae46b3cfd48e30da613, type: 3}
   hearth: {fileID: 1959004926773156613, guid: 0f9a33d8f94e27b41a1617ecca47781b, type: 3}
-  coinText: {fileID: 562419788}
+  coinText: {fileID: 562419789}
+  coin: {fileID: 1959004926773156613, guid: f8ad96e3d102ae04cbba02f7895d2568, type: 3}
 --- !u!222 &1127438017
 CanvasRenderer:
   m_ObjectHideFlags: 0
