@@ -51,6 +51,6 @@ public class CharacterManage : MonoBehaviour
     public void ChooseCharacter()
     {
         SettingsController.chosenCharacter = this.selectedOption;
-        //SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
 }
