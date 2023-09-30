@@ -15,7 +15,10 @@ MonoBehaviour:
   characterSelection:
   - characterName: Twardowski
     characterSprite: {fileID: 21300000, guid: 17f5a1023bc3c3840bc51aa285741991, type: 3}
+    sizeOfImage: {x: 1.5, y: 3.67}
   - characterName: Sawa
-    characterSprite: {fileID: 21300000, guid: 9183bae4145da6e4189874cf62878df5, type: 3}
+    characterSprite: {fileID: 21300000, guid: 8d9cfaa04cc4ff748b475179a37b1a1c, type: 3}
+    sizeOfImage: {x: 3.5, y: 3.67}
   - characterName: Atena
-    characterSprite: {fileID: 21300000, guid: 56603b3399f80d648ada456a9afc24ac, type: 3}
+    characterSprite: {fileID: 21300000, guid: 407bb39f2205d1a4092573f2914189da, type: 3}
+    sizeOfImage: {x: 0, y: 0}
