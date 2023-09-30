@@ -15,6 +15,13 @@ public class MainCharacter : MonoBehaviour
     {
         character = characterDB.GetCharacter(SettingsController.chosenCharacter);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet")
+        {
+            Debug.Log("TUTAJ DODAC ODEJMOWANIE HP");
+        }
+    }
 
     // Update is called once per frame
     void Update()
