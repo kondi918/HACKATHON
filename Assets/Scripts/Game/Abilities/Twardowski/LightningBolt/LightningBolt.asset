@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fee521e2057c94bbbec68cacc7feaa, type: 3}
+  m_Name: LightningBolt
+  m_EditorClassIdentifier: 
+  upgradesCosts: 050000000a0000000f0000001400000019000000
+  skillLevel: 0
+  skillMaxLevel: 5
+  attackSpeed: {fileID: 11400000, guid: 0597aadf16b5ad14b9cad81d0a223237, type: 2}
+  projectileSpeed: {fileID: 11400000, guid: 266eac85baf87214d814d2cc5c1fa145, type: 2}
+  projectileCount: {fileID: 11400000, guid: c09457dfb8a9cf049b0bdd17859b970a, type: 2}

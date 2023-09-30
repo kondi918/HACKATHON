@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class UIController : MonoBehaviour
 {
@@ -14,12 +15,18 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private GameObject coin;
+
+
+    [SerializeField] private GameObject[] skillsIcons;
     
     private Transform canvasTransform;
-    private int mn = 6;
-    private int coinquan = 100;
+    private int health = 6;
+    private int coinCount = 100;
     private int maxHealth = 10;
     private int curHealth = 6;
+
+    [SerializeField] private Powerup[] skills;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,17 +43,10 @@ public class UIController : MonoBehaviour
     void Update()
     {
         //testing
-        updateHealth(mn);
-        if (Input.GetKeyDown(KeyCode.W)) {
-            mn--;
-            //addHealth();
-        }
-        updateCoins(coinquan);
-        if (Input.GetKeyDown(KeyCode.S)) { 
-            coinquan--;
-            addHearth();
-        }
-
+        updateHealth(health);
+        updateCoins(coinCount);
+        updateSkills();
+        
     }
 
     private void createHearths(int quantityOfHearth)
@@ -92,12 +92,44 @@ public class UIController : MonoBehaviour
     private void createScills()
     {
 
-
     }
 
     private void updateSkills()
     {
+        for(int i = 0; i<skillsIcons.Length; i++)
+        {
+            if (skillsIcons[i].active!=true || skills[i].skillLevel == skills[i].skillMaxLevel)
+            {
+                continue;
+            }
+            if (coinCount >= skills[i].getCurrentUpgradeCost())
+            {
+                skillsIcons[i].GetComponent<SkillUpgrade>().isActive = true;
+                makeSkillActive(i);
+            }
+            if (skillsIcons[i].GetComponent<SkillUpgrade>().isClicked == true)
+            {
+                skillsIcons[i].GetComponent<SkillUpgrade>().isClicked = false;
+                skillsIcons[i].GetComponent<SkillUpgrade>().isActive = false;
+                makeSkillUnactive(i);
+                coinCount -= skills[i].getCurrentUpgradeCost();
+                skills[i].skillLevel++;
+            }
+        }
+    }
 
+    private void makeSkillActive(int indexOfSkill)
+    {
+        Color color = skillsIcons[indexOfSkill].GetComponent<Image>().color;
+        color.a = 1f;
+        skillsIcons[indexOfSkill].GetComponent<Image>().color = color;
+    }
+
+    private void makeSkillUnactive(int indexOfSkill)
+    {
+        Color color = skillsIcons[indexOfSkill].GetComponent<Image>().color;
+        color.a = 0.5f;
+        skillsIcons[indexOfSkill].GetComponent<Image>().color = color;
     }
 
     private void updateCoins(int value)

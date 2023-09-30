@@ -5,14 +5,13 @@ using UnityEngine;
 public class ChasePlayer : MonoBehaviour
 {
     [SerializeField] GameController gameController;
-    [SerializeField] Transform target; // Obiekt, za którym pod¹¿amy (bohater)
+    [SerializeField] private Transform target; // Obiekt, za którym pod¹¿amy (bohater)
     [SerializeField] float speed = 5.0f; // Szybkoœæ przeciwnika
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
     void Dying()
     {
         gameController.dropCoin(gameObject);
-        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
@@ -20,6 +19,11 @@ public class ChasePlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+    }
+
+    public void setTarget(Transform newTarget)
+    {
+        target = newTarget;   
     }
 
     // Update is called once per frame
@@ -50,6 +54,11 @@ public class ChasePlayer : MonoBehaviour
             Destroy(collision.gameObject);
             Dying();
         }
+    }
+
+    private void OnDestroy()
+    {
+        gameController.TestIfRoomClear();
     }
 
 }
