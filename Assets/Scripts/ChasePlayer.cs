@@ -12,7 +12,7 @@ public class ChasePlayer : MonoBehaviour
     void Dying()
     {
         gameController.dropCoin(gameObject);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     // Start is called before the first frame update

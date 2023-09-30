@@ -28,7 +28,7 @@ public class TwardowskiMainAttack : MonoBehaviour
             bulletClone.SetActive(true);
             bulletClone.GetComponent<Rigidbody2D>().velocity += direction.normalized * attackSpeed;
             Destroy(bulletClone, 5f);
-            attackCooldown = 2f;
+            attackCooldown = 2f * ParametersHandler.atackSpeedScale;
             twardowskiAnimator.Play("TwardowskiFireBall");
         }
     }

@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
         {
             Instantiate(coin, monster.transform.position, Quaternion.Euler(0, 0, 0));
         }
+        Destroy(monster);
     }
 
     public void dropExtraSkill(GameObject monster)
