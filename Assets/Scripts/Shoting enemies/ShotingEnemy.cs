@@ -77,4 +77,8 @@ public class ShotingEnemy : MonoBehaviour
             Dying();
         }
     }
+    private void OnDestroy()
+    {
+        gameController.TestIfRoomClear();
+    }
 }
