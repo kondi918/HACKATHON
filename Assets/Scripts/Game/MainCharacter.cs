@@ -27,7 +27,7 @@ public class MainCharacter : MonoBehaviour
             Debug.Log("TUTAJ DODAC ODEJMOWANIE HP");
             currentHealth -= 1;
             Destroy(collision.gameObject);
-            StartCoroutine(InvincibilityCoroutine());
+            StartCoroutine(InvincibilityCoroutine(timeOfInvicibility));
         }
         else if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet")
         {
@@ -36,14 +36,14 @@ public class MainCharacter : MonoBehaviour
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy" && !isInvincible)
         {
             currentHealth -= 1;
-            StartCoroutine(InvincibilityCoroutine());
+            StartCoroutine(InvincibilityCoroutine(timeOfInvicibility));
         }
     }
 
-    IEnumerator InvincibilityCoroutine()
+    IEnumerator InvincibilityCoroutine(float timer)
     {
         isInvincible = true;
-        yield return new WaitForSeconds(timeOfInvicibility);
+        yield return new WaitForSeconds(timer);
         isInvincible = false;
 
     }
