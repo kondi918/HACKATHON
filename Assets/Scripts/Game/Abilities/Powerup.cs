@@ -5,11 +5,16 @@ using UnityEngine;
 public class Powerup : ScriptableObject
 {
     [SerializeField]
-    protected int[] upgradesCosts;
+    public int[] upgradesCosts;
 
     [SerializeField]
-    protected int skillLevel;
+    public int skillLevel;
 
     [SerializeField]
-    protected int skillMaxLevel;
+    public int skillMaxLevel;
+
+    public int getCurrentUpgradeCost()
+    {
+        return upgradesCosts[skillLevel];
+    }
 }
