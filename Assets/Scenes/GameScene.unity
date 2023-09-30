@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 266939381}
   - component: {fileID: 266939384}
   - component: {fileID: 266939383}
-  - component: {fileID: 266939382}
   m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
@@ -315,21 +314,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1233810233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &266939382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266939380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15711c538bfa0b4f93199b0558d3364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
-  target: {fileID: 0}
-  speed: 5
 --- !u!58 &266939383
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1172,7 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15711c538bfa0b4f93199b0558d3364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 1233810237}
+  gameController: {fileID: 0}
   target: {fileID: 8672103736689224103}
   speed: 5
 --- !u!50 &1233810235
@@ -1702,6 +1686,7 @@ MonoBehaviour:
   characterDB: {fileID: 11400000, guid: fd49c4107297a4d41a2028f89f07580e, type: 2}
   movementSpeed: 0.3
   rb: {fileID: 503886345611829177}
+  animator: {fileID: 8610827467456417291}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1748,7 +1733,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.16, y: 1.67}
+  m_Size: {x: 1.52, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

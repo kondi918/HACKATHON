@@ -9,6 +9,7 @@ public class MainCharacter : MonoBehaviour
     Vector2 movement;
     [SerializeField] float movementSpeed = 0.3f;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class MainCharacter : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
     }
     private void FixedUpdate()
     {
