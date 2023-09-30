@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86045e74fbe5abe478d7927b26e24332, type: 3}
-  m_Name: LightningBoltProjectileCount
+  m_Script: {fileID: 11500000, guid: 30da0401adc9bc24ca6fd3f89b66dba3, type: 3}
+  m_Name: Watershot
   m_EditorClassIdentifier: 
-  values:
-  - 1
-  - 1
-  - 2
-  - 2
-  - 3
+  upgradesCosts: 050000000a0000000f0000001400000019000000
+  skillLevel: 0
+  skillMaxLevel: 5
+  attackSpeed: {fileID: 0}
+  projectileSpeed: {fileID: 0}
+  projectileCount: {fileID: 0}
