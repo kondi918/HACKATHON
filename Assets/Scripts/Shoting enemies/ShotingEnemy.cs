@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShotingEnemy : MonoBehaviour
 {
+    [SerializeField] GameController gameController;
     [SerializeField] GameObject projectileExample;
     [SerializeField] float reload = 1f;
     [SerializeField] float projectileSpeed = 10f;
@@ -28,6 +30,12 @@ public class ShotingEnemy : MonoBehaviour
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * projectileSpeed * -1;
         Destroy(projectile, 5f);
+    }
+
+    void Dying()
+    {
+        gameController.dropCoin(gameObject);
+        Destroy(gameObject);
     }
 
     IEnumerator shoting()
@@ -59,5 +67,14 @@ public class ShotingEnemy : MonoBehaviour
     private Vector3 GetPlayerPosition()
     {
         return new Vector3(player.transform.position.x, player.transform.position.y, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMask.LayerToName( collision.gameObject.layer) == "FriendlyBullet") 
+        {
+            Destroy(collision.gameObject);
+            Dying();
+        }
     }
 }
