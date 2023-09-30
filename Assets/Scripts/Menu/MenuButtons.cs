@@ -11,7 +11,7 @@ public class MenuButtons : MonoBehaviour
     }
     public void SelectCharacterButton()
     {
-        
+        SceneManager.LoadScene("CharacterSelection");
     }
     public void SettingsButton()
     {
