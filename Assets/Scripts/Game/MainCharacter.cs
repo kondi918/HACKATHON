@@ -40,12 +40,12 @@ public class MainCharacter : MonoBehaviour
         }
     }
 
-    IEnumerator InvincibilityCoroutine(float timer)
+    public IEnumerator InvincibilityCoroutine(float timer)
     {
         isInvincible = true;
         yield return new WaitForSeconds(timer);
         isInvincible = false;
-
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
         // Update is called once per frame
