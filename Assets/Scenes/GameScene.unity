@@ -1808,7 +1808,7 @@ MonoBehaviour:
   - {fileID: 1840697212}
   skills:
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
-  - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  - {fileID: 11400000, guid: bbceb068176e6244f9a50b93231b491a, type: 2}
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
 --- !u!1 &1110431751
 GameObject:
