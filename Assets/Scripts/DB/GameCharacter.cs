@@ -8,6 +8,4 @@ public class GameCharacter
     public Sprite characterSprite; 
     public string characterName;
     public Sprite specialAbilitySprite;
-    public Sprite bonusAbilitySprite;
-    public GameObject mainAttack;
 }
