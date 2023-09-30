@@ -5,6 +5,7 @@ using UnityEngine;
 public class TwardowskiMainAttack : MonoBehaviour
 {
     private float attackCooldown = 0;
+    [SerializeField] GameObject[] skills;
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] Transform mainCharacterTransform;
     [SerializeField] GameObject bullet;
@@ -22,14 +23,17 @@ public class TwardowskiMainAttack : MonoBehaviour
         if (attackCooldown <= 0 )
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = mousePosition - mainCharacterTransform.position;
-            float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            var bulletClone = Instantiate(bullet, mainCharacterTransform.position,Quaternion.Euler(0,0,rotation));
-            bulletClone.SetActive(true);
-            bulletClone.GetComponent<Rigidbody2D>().velocity += direction.normalized * attackSpeed;
-            Destroy(bulletClone, 5f);
-            attackCooldown = 2f * ParametersHandler.atackSpeedScale;
-            twardowskiAnimator.Play("TwardowskiFireBall");
+            if (!mouseOnSkillIcon())
+            {
+                Vector2 direction = mousePosition - mainCharacterTransform.position;
+                float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                var bulletClone = Instantiate(bullet, mainCharacterTransform.position, Quaternion.Euler(0, 0, rotation));
+                bulletClone.SetActive(true);
+                bulletClone.GetComponent<Rigidbody2D>().velocity += direction.normalized * attackSpeed;
+                Destroy(bulletClone, 5f);
+                attackCooldown = 2f * ParametersHandler.atackSpeedScale;
+                twardowskiAnimator.Play("TwardowskiFireBall");
+            }
         }
     }
     private void CheckInput()
@@ -43,5 +47,22 @@ public class TwardowskiMainAttack : MonoBehaviour
     {
         CheckCooldown();
         CheckInput();
+    }
+
+    private bool mouseOnSkillIcon()
+    {
+        foreach (GameObject skill in skills)
+        {
+            Vector3 positionOfMouse = Input.mousePosition;
+            Vector3 posOfSkil = skill.transform.position;
+            posOfSkil -= new Vector3(skill.GetComponent<RectTransform>().sizeDelta.x, skill.GetComponent<RectTransform>().sizeDelta.y / 2);
+            Vector3 posOfSkil2 = new Vector3(posOfSkil.x - skill.GetComponent<RectTransform>().sizeDelta.x, posOfSkil.y + skill.GetComponent<RectTransform>().sizeDelta.y);
+            if (positionOfMouse.x < posOfSkil.x && positionOfMouse.x > posOfSkil2.x && positionOfMouse.y > posOfSkil.y && positionOfMouse.y < posOfSkil2.y)
+            {
+                return true;
+            }
+            
+        }
+        return false;
     }
 }
