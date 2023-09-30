@@ -2,30 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIController : MonoBehaviour
 {
+
     [SerializeField] private Sprite[] hearthSprites;
     [SerializeField] private GameObject hearth;
-    private List<GameObject> hearthsOnScreen=new List<GameObject>();
+    private List<GameObject> hearthsOnScreen = new List<GameObject>();
+
+
+    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] private GameObject coin;
+    
     private Transform canvasTransform;
     private int mn = 6;
+    private int coinquan = 100;
     private int maxHealth = 6;
     // Start is called before the first frame update
     void Start()
     {
         canvasTransform = GetComponent<Transform>();
         createHearths(maxHealth/2);
+
+        coin.GetComponent<RectTransform>().anchoredPosition = new Vector3(-125f, -50f, 0f);
        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //testing
         updateHealth(mn);
         if (Input.GetKeyDown(KeyCode.W)) {
             mn--;
             //addHealth();
+        }
+        updateCoins(coinquan);
+        if (Input.GetKeyDown(KeyCode.S)) { 
+            coinquan--; 
         }
 
     }
@@ -64,6 +79,25 @@ public class UIController : MonoBehaviour
         {
             hearthsOnScreen[healthIndex].GetComponent<Image>().sprite= hearthSprites[1];
         }
+    }
+
+    private void createScills()
+    {
+
+
+    }
+
+    private void updateSkills()
+    {
+
+    }
+
+    private void updateCoins(int value)
+    {
+        coinText.SetText("x"+value.ToString());
+        int additionalX = value.ToString().Length;
+        float xCoordinate = -(88 + (additionalX - 1) * 20);
+        coin.GetComponent<RectTransform>().anchoredPosition = new Vector3(xCoordinate, -50f, 0f);
     }
 
 }
