@@ -12,6 +12,9 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
 
+    private float timeOfInvicibility=1.0f;
+    private bool isInvincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +22,34 @@ public class MainCharacter : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet")
+        if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet" && !isInvincible)
         {
             Debug.Log("TUTAJ DODAC ODEJMOWANIE HP");
             currentHealth -= 1;
             Destroy(collision.gameObject);
+            StartCoroutine(InvincibilityCoroutine());
+        }
+        else if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet")
+        {
+            Destroy(collision.gameObject);
+        }
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Enemy" && !isInvincible)
+        {
+            currentHealth -= 1;
+            StartCoroutine(InvincibilityCoroutine());
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator InvincibilityCoroutine()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(timeOfInvicibility);
+        isInvincible = false;
+
+    }
+
+        // Update is called once per frame
+        void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
