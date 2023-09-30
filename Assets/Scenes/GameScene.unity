@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15711c538bfa0b4f93199b0558d3364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
   target: {fileID: 0}
   speed: 5
 --- !u!58 &266939383
@@ -1135,6 +1136,7 @@ GameObject:
   - component: {fileID: 1233810236}
   - component: {fileID: 1233810235}
   - component: {fileID: 1233810234}
+  - component: {fileID: 1233810237}
   m_Layer: 10
   m_Name: PuudieMonster
   m_TagString: Untagged
@@ -1170,6 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15711c538bfa0b4f93199b0558d3364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 1233810237}
   target: {fileID: 8672103736689224103}
   speed: 5
 --- !u!50 &1233810235
@@ -1251,6 +1254,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1233810237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233810232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8668c506001e14996d84faad62c85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 5258299968256415334, guid: eaafa94f5c1c5224da2b0b1abaa4a011, type: 3}
+  extraSkill: {fileID: 0}
 --- !u!1 &1462230659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1702,6 @@ MonoBehaviour:
   characterDB: {fileID: 11400000, guid: fd49c4107297a4d41a2028f89f07580e, type: 2}
   movementSpeed: 0.3
   rb: {fileID: 503886345611829177}
-  test: {fileID: 1110431751}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0

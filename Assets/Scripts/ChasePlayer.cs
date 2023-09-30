@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
-    public Transform target; // Obiekt, za którym pod¹¿amy (bohater)
-    public float speed = 5.0f; // Szybkoœæ przeciwnika
+    [SerializeField] GameController gameController;
+    [SerializeField] Transform target; // Obiekt, za którym pod¹¿amy (bohater)
+    [SerializeField] float speed = 5.0f; // Szybkoœæ przeciwnika
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
-
+    void Dying()
+    {
+        gameController.dropCoin(gameObject);
+        Destroy(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,4 +42,14 @@ public class ChasePlayer : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "FriendlyBullet")
+        {
+            Destroy(collision.gameObject);
+            Dying();
+        }
+    }
+
 }
