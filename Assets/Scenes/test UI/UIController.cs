@@ -18,15 +18,18 @@ public class UIController : MonoBehaviour
     private Transform canvasTransform;
     private int mn = 6;
     private int coinquan = 100;
-    private int maxHealth = 6;
+    private int maxHealth = 10;
+    private int curHealth = 6;
     // Start is called before the first frame update
     void Start()
     {
+        //creating hearths objects
         canvasTransform = GetComponent<Transform>();
-        createHearths(maxHealth/2);
+        createHearths(3);
 
-        coin.GetComponent<RectTransform>().anchoredPosition = new Vector3(-125f, -50f, 0f);
-       
+        //creating coin object
+        coin=Instantiate(coin, Vector3.zero, Quaternion.Euler(0,0,0));
+        coin.transform.parent = canvasTransform;
     }
 
     // Update is called once per frame
@@ -59,9 +62,13 @@ public class UIController : MonoBehaviour
 
     private void addHearth()
     {
-        int xCoordinate = (int)hearthsOnScreen[hearthsOnScreen.Count - 1].transform.position.x+75;
-        hearthsOnScreen.Add(Instantiate(hearth, new Vector3(xCoordinate, 50, 0), Quaternion.Euler(0, 0, 0)));
-        hearthsOnScreen[hearthsOnScreen.Count-1].transform.parent = canvasTransform;
+        if (curHealth != maxHealth)
+        {
+            int xCoordinate = (int)hearthsOnScreen[hearthsOnScreen.Count - 1].transform.position.x + 75;
+            hearthsOnScreen.Add(Instantiate(hearth, new Vector3(xCoordinate, 50, 0), Quaternion.Euler(0, 0, 0)));
+            hearthsOnScreen[hearthsOnScreen.Count - 1].transform.parent = canvasTransform;
+            curHealth += 2;
+        }
     }
 
     private void updateHealth(int health)
