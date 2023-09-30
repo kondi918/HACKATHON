@@ -1810,6 +1810,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
   - {fileID: 11400000, guid: bbceb068176e6244f9a50b93231b491a, type: 2}
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  player: {fileID: 6707842670011340904}
 --- !u!1 &1110431751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDB: {fileID: 11400000, guid: fd49c4107297a4d41a2028f89f07580e, type: 2}
+  currentHealth: 6
   movementSpeed: 0.3
   rb: {fileID: 503886345611829177}
   animator: {fileID: 8610827467456417291}
@@ -3511,6 +3513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aaa8f7a2799104b9f87fd8a637fc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skills:
+  - {fileID: 403199705}
+  - {fileID: 2103534533}
+  - {fileID: 1840697212}
   attackSpeed: 8
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 8481196520164725859}

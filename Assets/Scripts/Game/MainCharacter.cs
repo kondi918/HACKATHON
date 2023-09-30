@@ -7,6 +7,7 @@ public class MainCharacter : MonoBehaviour
     GameCharacter character;
     [SerializeField] GameCharacterDB characterDB;
     Vector2 movement;
+    public int currentHealth = 6;
     [SerializeField] float movementSpeed = 0.3f;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
@@ -21,6 +22,8 @@ public class MainCharacter : MonoBehaviour
         if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet")
         {
             Debug.Log("TUTAJ DODAC ODEJMOWANIE HP");
+            currentHealth -= 1;
+            Destroy(collision.gameObject);
         }
     }
 

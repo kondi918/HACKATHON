@@ -27,6 +27,9 @@ public class UIController : MonoBehaviour
 
     [SerializeField] private Powerup[] skills;
 
+
+    [SerializeField] GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +40,13 @@ public class UIController : MonoBehaviour
         //creating coin object
         coin=Instantiate(coin, Vector3.zero, Quaternion.Euler(0,0,0));
         coin.transform.parent = canvasTransform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        health = player.GetComponent<MainCharacter>().currentHealth;
         //testing
         updateHealth(health);
         updateCoins(coinCount);
@@ -100,7 +105,9 @@ public class UIController : MonoBehaviour
         {
             if (skillsIcons[i].active!=true || skills[i].skillLevel == skills[i].skillMaxLevel)
             {
+                makeSkillUnactive(i);
                 continue;
+                
             }
             if (coinCount >= skills[i].getCurrentUpgradeCost())
             {
