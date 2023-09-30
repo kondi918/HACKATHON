@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 
@@ -45,5 +46,11 @@ public class CharacterManage : MonoBehaviour
         artworkSprite.sprite = character.characterSprite;
         nameText.text = character.characterName;
         GetComponent<RectTransform>().sizeDelta = character.sizeOfImage;
+    }
+
+    public void ChooseCharacter()
+    {
+        SettingsController.chosenCharacter = this.selectedOption;
+        //SceneManager.LoadScene("Menu");
     }
 }
