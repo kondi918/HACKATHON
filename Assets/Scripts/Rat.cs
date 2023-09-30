@@ -20,12 +20,12 @@ public class Rat : MonoBehaviour
         Debug.Log(enemyTransforms.Length);
         if (enemyTransforms.Length == 1)
         {
-            chasePlayer.target = enemyTransforms[0];
+            chasePlayer.setTarget(enemyTransforms[0]);
         }
         else if (enemyTransforms.Length > 0)
         {
             int random = Random.Range(0, enemyTransforms.Length);
-            chasePlayer.target = enemyTransforms[random];
+            chasePlayer.setTarget( enemyTransforms[random]);
 
         }
     }

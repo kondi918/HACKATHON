@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChasePlayer : MonoBehaviour
 {
     [SerializeField] GameController gameController;
-    [SerializeField] Transform target; // Obiekt, za którym pod¹¿amy (bohater)
+    [SerializeField] private Transform target; // Obiekt, za którym pod¹¿amy (bohater)
     [SerializeField] float speed = 5.0f; // Szybkoœæ przeciwnika
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
@@ -20,6 +20,11 @@ public class ChasePlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
+    }
+
+    public void setTarget(Transform newTarget)
+    {
+        target = newTarget;   
     }
 
     // Update is called once per frame
