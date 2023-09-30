@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 459f9634311f9674eb17e8b389720b7c, type: 3}
+  m_Name: WaterElemental
+  m_EditorClassIdentifier: 
+  upgradesCosts: 0a000000140000001e0000002800000032000000
+  skillLevel: 0
+  skillMaxLevel: 5
+  attackSpeed: {fileID: 11400000, guid: 2dcef859bfad97f4793d75f14eaa93db, type: 2}
+  durability: {fileID: 11400000, guid: 0f0652a7a9b2b664cbf5e315b46a7745, type: 2}
+  projectileCount: {fileID: 11400000, guid: 0ee05eb1b37ff414fba8b27bf2b8bbef, type: 2}
+  projectileSpeed: {fileID: 11400000, guid: 98fce497cdd046248bbe2d6ba4fda030, type: 2}

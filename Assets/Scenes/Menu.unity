@@ -1177,7 +1177,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1055124488}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: selectCharacterButton
+        m_MethodName: SelectCharacterButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
