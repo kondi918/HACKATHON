@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86045e74fbe5abe478d7927b26e24332, type: 3}
   m_Name: FireballProjectileCount
   m_EditorClassIdentifier: 
-  values: []
+  values:
+  - 1
+  - 2
+  - 2
+  - 3
+  - 3

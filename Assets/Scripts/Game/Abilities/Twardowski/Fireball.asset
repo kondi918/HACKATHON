@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradesCosts: 
   skillLevel: 0
-  skillMaxLevel: 
-  duration: 
-  attackSpeed: {fileID: 0}
+  skillMaxLevel: 5
+  attackSpeed: {fileID: 11400000, guid: 0be8efdf73cf490449c288d8fe185352, type: 2}
+  projectileSpeed: {fileID: 11400000, guid: cbe3e7bd6c5a0bb4985b96ae03f8e621, type: 2}
+  projectileCount: {fileID: 11400000, guid: 3240b34c27f51ae448c044862be2142c, type: 2}
