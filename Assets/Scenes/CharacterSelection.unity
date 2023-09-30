@@ -275,9 +275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 221704466}
-        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: exitButton
+      - m_Target: {fileID: 1923090037}
+        m_TargetAssemblyTypeName: CharacterManage, Assembly-CSharp
+        m_MethodName: ChooseCharacter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
