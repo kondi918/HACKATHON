@@ -7,7 +7,7 @@ public class ShotingEnemy : MonoBehaviour
 {
     [SerializeField] GameController gameController;
     [SerializeField] GameObject projectileExample;
-    [SerializeField] float reload = 1f;
+    //[SerializeField] float reload = 1f;
     [SerializeField] float projectileSpeed = 10f;
     private Vector3 direction = Vector3.zero;
 
@@ -40,7 +40,7 @@ public class ShotingEnemy : MonoBehaviour
 
     IEnumerator shoting()
     {
-        yield return new WaitForSeconds(reload);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1f,3f));
         Shot();
         StartCoroutine(shoting());
     }
