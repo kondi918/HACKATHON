@@ -11,6 +11,7 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] float movementSpeed = 0.3f;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
+    [SerializeField] RoomsOperator roomsOperator;
 
     private float timeOfInvicibility=1.0f;
     private bool isInvincible = false;
@@ -38,6 +39,10 @@ public class MainCharacter : MonoBehaviour
         {
             currentHealth -= 1;
             StartCoroutine(InvincibilityCoroutine(timeOfInvicibility));
+        }
+        if (LayerMask.LayerToName(collision.gameObject.layer)=="Door" && roomsOperator.checkRoom())
+        {
+            roomsOperator.loadNext();
         }
     }
 
