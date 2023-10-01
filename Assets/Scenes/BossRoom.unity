@@ -509,6 +509,7 @@ MonoBehaviour:
   pudieSidekick: {fileID: 0}
   shootingSidekick: {fileID: 0}
   gameController: {fileID: 0}
+  room: {fileID: 0}
 --- !u!136 &223939611
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1628,12 +1629,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
   - {fileID: 11400000, guid: bbceb068176e6244f9a50b93231b491a, type: 2}
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  skillsTwardowski: []
+  skillsSawa: []
   player: {fileID: 6707842670011340904}
-  abillities: []
+  sawaAbilities: []
+  twardowskiAbilities: []
   mainSkillCooldown: {fileID: 0}
-  mainSkill: {fileID: 0}
   secondSkillCooldown: {fileID: 0}
-  secondSkill: {fileID: 0}
+  skillDescriptions: []
 --- !u!1 &1110431751
 GameObject:
   m_ObjectHideFlags: 0

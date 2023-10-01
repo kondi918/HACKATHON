@@ -521,6 +521,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &331498136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331498137}
+  m_Layer: 0
+  m_Name: BossRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331498137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331498136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1600376959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &403199705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1959004926773156613, guid: 0f9a33d8f94e27b41a1617ecca47781b, type: 3}
@@ -809,12 +840,11 @@ Transform:
   m_GameObject: {fileID: 790495442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.940001, y: 1.8199999, z: 0.0058128834}
+  m_LocalPosition: {x: 2.4790401, y: 2.7528665, z: -1.0013266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1730345417}
-  m_Father: {fileID: 2048318959}
+  m_Children: []
+  m_Father: {fileID: 1600376959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &790495444
 Rigidbody2D:
@@ -1346,12 +1376,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
   - {fileID: 11400000, guid: bbceb068176e6244f9a50b93231b491a, type: 2}
   - {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  skillsTwardowski: []
+  skillsSawa: []
   player: {fileID: 6707842670011340904}
-  abillities: []
+  sawaAbilities: []
+  twardowskiAbilities: []
   mainSkillCooldown: {fileID: 0}
-  mainSkill: {fileID: 0}
   secondSkillCooldown: {fileID: 0}
-  secondSkill: {fileID: 0}
+  skillDescriptions: []
 --- !u!1 &1110431751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,12 +1533,12 @@ Transform:
   m_GameObject: {fileID: 1233810232}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.15, y: -0.77, z: 1.0020072}
+  m_LocalPosition: {x: -7.6109605, y: 0.1628663, z: -0.0051321387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 266939381}
-  m_Father: {fileID: 2048318959}
+  m_Father: {fileID: 1600376959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1233810234
 MonoBehaviour:
@@ -1757,6 +1789,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2048318959}
+  - {fileID: 1233810233}
+  - {fileID: 790495443}
+  - {fileID: 331498137}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614504775
@@ -1873,12 +1908,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730345416}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.695608, y: 0.695608, z: 0.695608}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.809698, y: 3.5123158, z: 0}
+  m_LocalScale: {x: 0.6956081, y: 0.6956081, z: 0.6956081}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 790495443}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1730345418
 Rigidbody2D:
@@ -2038,6 +2073,11 @@ MonoBehaviour:
   pudieSidekick: {fileID: 1233810232}
   shootingSidekick: {fileID: 790495442}
   gameController: {fileID: 2005402111}
+  room: {fileID: 331498136}
+  projectileExample: {fileID: 1730345416}
+  projectileSpeed: 10
+  movingSpeed: 1
+  player: {fileID: 6707842670011340904}
 --- !u!136 &1828899908
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2424,6 +2464,7 @@ MonoBehaviour:
   extraSkill: {fileID: 0}
   rooms:
   - {fileID: 2048318958}
+  - {fileID: 331498136}
 --- !u!114 &2005402112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2464,9 +2505,7 @@ Transform:
   m_LocalPosition: {x: -4.4609604, y: 0.9328663, z: -1.0071394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1233810233}
-  - {fileID: 790495443}
+  m_Children: []
   m_Father: {fileID: 1600376959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2062873564
@@ -3420,3 +3459,4 @@ SceneRoots:
   - {fileID: 1600376959}
   - {fileID: 1839120433}
   - {fileID: 1828899910}
+  - {fileID: 1730345417}
