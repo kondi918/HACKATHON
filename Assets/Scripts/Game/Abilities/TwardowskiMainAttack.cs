@@ -7,7 +7,7 @@ public class TwardowskiMainAttack : MonoBehaviour
     public float defaultCooldown = 2f;
     public float attackCooldown = 0;
     [SerializeField] GameObject[] skills;
-    [SerializeField] float projectileSpeed = 1f;
+    [SerializeField] float projectileSpeed = 8f;
     [SerializeField] Transform mainCharacterTransform;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;

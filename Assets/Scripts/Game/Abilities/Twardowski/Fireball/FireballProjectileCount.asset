@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireballProjectileCount
   m_EditorClassIdentifier: 
   values:
-  - 1
   - 2
-  - 2
-  - 3
-  - 3
+  - 4
+  - 6
+  - 8
+  - 10

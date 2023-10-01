@@ -3016,7 +3016,7 @@ MonoBehaviour:
   defaultCooldown: 2
   attackCooldown: 0
   skills: []
-  projectileSpeed: 1
+  projectileSpeed: 8
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 861124277}
   sawaAnimator: {fileID: 8610827467456417291}
@@ -4854,7 +4854,7 @@ MonoBehaviour:
   - {fileID: 1311205646}
   - {fileID: 143677588}
   - {fileID: 1410289224}
-  projectileSpeed: 1
+  projectileSpeed: 8
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 8481196520164725859}
   twardowskiAnimator: {fileID: 8610827467456417291}
