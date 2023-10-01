@@ -22,7 +22,6 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController.SetCurrentRoom(1);
         StartCoroutine(shoting());
     }
 

@@ -1909,7 +1909,7 @@ Transform:
   m_GameObject: {fileID: 1730345416}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.809698, y: 3.5123158, z: 0}
+  m_LocalPosition: {x: -1.69, y: -1.03, z: 0}
   m_LocalScale: {x: 0.6956081, y: 0.6956081, z: 0.6956081}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2465,6 +2465,9 @@ MonoBehaviour:
   rooms:
   - {fileID: 2048318958}
   - {fileID: 331498136}
+  TwardowskiSkills: {fileID: 0}
+  SawaSkills: {fileID: 0}
+  currentRoom: 0
 --- !u!114 &2005402112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2940,6 +2943,8 @@ MonoBehaviour:
   movementSpeed: 0.3
   rb: {fileID: 503886345611829177}
   animator: {fileID: 8610827467456417291}
+  roomsOperator: {fileID: 0}
+  sr: {fileID: 0}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0
