@@ -2642,7 +2642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCooldown: 0
   attackCooldown: 5
-  attackSpeed: 1
   bullet: {fileID: 1934580099}
   twardowskiAnimator: {fileID: 8610827467456417291}
 --- !u!1001 &1530876725
@@ -4477,6 +4476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossStageAttributs
       objectReference: {fileID: 0}
+    - target: {fileID: 6976578856580800004, guid: 6ccc1dd352621204d8d01f9b67a96aae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7814594772207363963, guid: 6ccc1dd352621204d8d01f9b67a96aae, type: 3}
       propertyPath: target
       value: 
@@ -4587,12 +4590,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aaa8f7a2799104b9f87fd8a637fc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCooldown: 2
   attackCooldown: 0
   skills:
   - {fileID: 1311205646}
   - {fileID: 143677588}
   - {fileID: 1410289224}
-  attackSpeed: 8
+  projectileSpeed: 1
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 8481196520164725859}
   twardowskiAnimator: {fileID: 8610827467456417291}
