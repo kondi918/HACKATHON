@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
-    [SerializeField] GameController gameController;
-    [SerializeField] private Transform target; // Obiekt, za którym pod¹¿amy (bohater)
+    [SerializeField] public GameController gameController;
+    [SerializeField] public Transform target; // Obiekt, za którym pod¹¿amy (bohater)
     [SerializeField] float speed = 5.0f; // Szybkoœæ przeciwnika
 
     private Rigidbody2D rb; // Referencja do Rigidbody2D
@@ -53,14 +53,6 @@ public class ChasePlayer : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Dying();
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (gameController.TestIfRoomClear())
-        {
-            gameController.GoToNextRoom();
         }
     }
 

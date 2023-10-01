@@ -135,6 +135,7 @@ public class UIController : MonoBehaviour
         }
         for (int i = 0; i<healthIndex; i++)
         {
+           // Debug.Log(hearthsOnScreen.Count);    
             hearthsOnScreen[i].GetComponent<Image>().sprite = hearthSprites[2];
         }
         if (hearthStatus == 1)

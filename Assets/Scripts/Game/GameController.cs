@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject extraSkill;
     [SerializeField] private List<GameObject> rooms;
-    private int currentRoom = 0;
+    public int currentRoom = 0;
 
     public void dropCoin(GameObject monster)
     {
@@ -63,6 +63,7 @@ public class GameController : MonoBehaviour
                 roomIsClear = false;
             }
         }
+        //Debug.Log("1");
         
         return roomIsClear;
     }

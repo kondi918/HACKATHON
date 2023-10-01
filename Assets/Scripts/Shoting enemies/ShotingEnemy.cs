@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShotingEnemy : MonoBehaviour
 {
-    [SerializeField] GameController gameController;
+    [SerializeField] public GameController gameController;
     [SerializeField] GameObject projectileExample;
     //[SerializeField] float reload = 1f;
     [SerializeField] float projectileSpeed = 10f;
@@ -13,7 +13,7 @@ public class ShotingEnemy : MonoBehaviour
 
     [SerializeField] float movingSpeed = 1f;
 
-    [SerializeField] GameObject player;
+    [SerializeField] public GameObject player;
 
 
     void Start()
@@ -76,13 +76,6 @@ public class ShotingEnemy : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Dying();
-        }
-    }
-    private void OnDestroy()
-    {
-        if (gameController.TestIfRoomClear()) 
-        {
-            gameController.GoToNextRoom();
         }
     }
 }
