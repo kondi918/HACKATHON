@@ -71,6 +71,12 @@ public class UIController : MonoBehaviour
         else
         {
             skills = skillsSawa;
+            mainAtackTxt = mainAtackTwardtxt;
+            secondAtackTxt = secondAtackTwardtxt;
+            extraAtackTxt = "";
+            mainSkill = sawaAbilities[0];
+            secondSkill= sawaAbilities[1];
+
             //to do sawa like twardowski
         }
         //creating hearths objects
@@ -241,9 +247,9 @@ public class UIController : MonoBehaviour
                 break;
             //change to sawa abilities skills
             case 1:
-                mainSkillCooldown.value = mainSkill.GetComponent<TwardowskiMainAttack>().attackCooldown / skills[0].GetCooldown();
+                mainSkillCooldown.value = mainSkill.GetComponent<SawaMainAttack>().attackCooldown / skills[0].GetCooldown();
 
-                secondSkillCooldown.value = secondSkill.GetComponent<TwardowskiSpecialAttack>().attackCooldown / skills[1].GetCooldown();
+                secondSkillCooldown.value = secondSkill.GetComponent<SawaSpecialAbility>().attackCooldown / skills[1].GetCooldown();
                 break;
         }
         if (mainSkillCooldown.value == 0)
