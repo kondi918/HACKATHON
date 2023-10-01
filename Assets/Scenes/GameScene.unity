@@ -2490,6 +2490,8 @@ MonoBehaviour:
   skillsSawa:
   - {fileID: 11400000, guid: fa0e3fa3b8f6db64bb9833a97caecc38, type: 2}
   - {fileID: 11400000, guid: 3db0a22e331db8c469862b7a78942d06, type: 2}
+  fir: {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  wat: {fileID: 11400000, guid: fa0e3fa3b8f6db64bb9833a97caecc38, type: 2}
   player: {fileID: 6707842670011340904}
   sawaAbilities:
   - {fileID: 1555190890}
@@ -4731,6 +4733,10 @@ PrefabInstance:
     - target: {fileID: 6976578856580800004, guid: 6ccc1dd352621204d8d01f9b67a96aae, type: 3}
       propertyPath: m_Name
       value: BossStageAttributs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976578856580800004, guid: 6ccc1dd352621204d8d01f9b67a96aae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7814594772207363963, guid: 6ccc1dd352621204d8d01f9b67a96aae, type: 3}
       propertyPath: target
