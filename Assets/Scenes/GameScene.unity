@@ -3556,10 +3556,10 @@ MonoBehaviour:
   - {fileID: 99019033727142770, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
   - {fileID: 99019033727142770, guid: f17ceef7356a69f4c9d3bd102bad4650, type: 3}
   - {fileID: 3024823746152359530, guid: 8643aec3d4c2c5e4da0377a7da4845eb, type: 3}
-  - {fileID: 5778531752110492746, guid: 02fb2df6290aacd4e949cc0522e29a68, type: 3}
   gameController: {fileID: 2005402111}
   lastRoom: {fileID: 2021509837}
   player: {fileID: 6707842670011340904}
+  bossRoom: {fileID: 3073058553577226487, guid: 290aa3b4a052c024e9664a7218000267, type: 3}
 --- !u!4 &1655998194
 Transform:
   m_ObjectHideFlags: 0

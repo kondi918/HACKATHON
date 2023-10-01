@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour
 {
     [SerializeField] GameObject pudieSidekick;
     [SerializeField] GameObject shootingSidekick;
-    [SerializeField] GameController gameController;
+    [SerializeField] public GameController gameController;
     [SerializeField] GameObject room;
     float summonCD = 0;
 
@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
 
     [SerializeField] float movingSpeed = 1f;
 
-    [SerializeField] GameObject player;
+    [SerializeField] public GameObject player;
 
     // Start is called before the first frame update
     void Start()

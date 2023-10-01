@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireballProjectileSpeed
   m_EditorClassIdentifier: 
   values:
-  - 9
   - 10
-  - 11
   - 12
-  - 13
+  - 14
+  - 16
+  - 18

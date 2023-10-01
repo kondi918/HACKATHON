@@ -77,12 +77,15 @@ public class UIController : MonoBehaviour
         secondAtackSawatxt = "Water Elemental" + "\n" + "Second attack skill of Sawa. She calls a water elemental that shoot to an enemy.";
         if (hero == 0)
         {
+
             skills = skillsTwardowski;
             mainAtackTxt = mainAtackTwardtxt;
             secondAtackTxt= secondAtackTwardtxt;
             extraAtackTxt = "";
             mainSkill = twardowskiAbilities[0];
             secondSkill = twardowskiAbilities[1];
+            twardowskiAbilities[0].GetComponent<TwardowskiMainAttack>().UpgradeSkill(fir.GetProjectileSpped(), skills[0].GetCooldown());
+            twardowskiAbilities[1].GetComponent<TwardowskiSpecialAttack>().UpgradeSkill(skills[1].GetCooldown());
         }
         else
         {
@@ -92,6 +95,9 @@ public class UIController : MonoBehaviour
             extraAtackTxt = "";
             mainSkill = sawaAbilities[0];
             secondSkill= sawaAbilities[1];
+            sawaAbilities[0].GetComponent<SawaMainAttack>().UpgradeSkill(wat.GetProjectileSpped(), skills[0].GetCooldown());
+            sawaAbilities[1].GetComponent<SawaSpecialAbility>().UpgradeSkill(skills[1].GetCooldown());
+
 
             //to do sawa like twardowski
         }
