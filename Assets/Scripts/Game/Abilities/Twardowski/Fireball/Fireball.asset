@@ -18,3 +18,4 @@ MonoBehaviour:
   attackSpeed: {fileID: 11400000, guid: 0be8efdf73cf490449c288d8fe185352, type: 2}
   projectileSpeed: {fileID: 11400000, guid: cbe3e7bd6c5a0bb4985b96ae03f8e621, type: 2}
   projectileCount: {fileID: 11400000, guid: 3240b34c27f51ae448c044862be2142c, type: 2}
+  projectileDamage: {fileID: 11400000, guid: 44177474b88255a41b670a967f9e00fe, type: 2}

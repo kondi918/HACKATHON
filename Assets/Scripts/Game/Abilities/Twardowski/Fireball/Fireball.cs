@@ -14,4 +14,5 @@ public class Fireball : Powerup
     public float GetAttackSpeed() { return attackSpeed.GetValue(skillLevel); }
     public float GetProjectileSpped() { return projectileSpeed.GetValue(skillLevel); }
     public float GetProjectileCount() { return projectileCount.GetValue(skillLevel); }
+
 }
