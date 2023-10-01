@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightningBolt
   m_EditorClassIdentifier: 
   upgradesCosts: 050000000a0000000f0000001400000019000000
-  skillLevel: 4
+  skillLevel: 1
   skillMaxLevel: 5
   projectileDamage: {fileID: 11400000, guid: b9ba971b07efc1646aff0d57d450da13, type: 2}
   cooldown: {fileID: 11400000, guid: 810b4d189034acd43a79f3b34f166f85, type: 2}
