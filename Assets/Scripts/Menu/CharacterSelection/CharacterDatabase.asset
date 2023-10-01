@@ -19,6 +19,3 @@ MonoBehaviour:
   - characterName: Sawa
     characterSprite: {fileID: 21300000, guid: 8d9cfaa04cc4ff748b475179a37b1a1c, type: 3}
     sizeOfImage: {x: 3.5, y: 3.67}
-  - characterName: Atena
-    characterSprite: {fileID: 21300000, guid: 407bb39f2205d1a4092573f2914189da, type: 3}
-    sizeOfImage: {x: 0, y: 0}
