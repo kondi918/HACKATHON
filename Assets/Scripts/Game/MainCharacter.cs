@@ -24,6 +24,7 @@ public class MainCharacter : MonoBehaviour
     {
         character = characterDB.GetCharacter(SettingsController.chosenCharacter);
         animator.runtimeAnimatorController = character.animator;
+        gameObject.GetComponent<SpriteRenderer>().sprite = character.characterSprite;
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,18 +55,19 @@ public class MainCharacter : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(timer);
         isInvincible = false;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
         // Update is called once per frame
         void Update()
     {
+        sr.sprite = character.characterSprite;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        sr.sprite = character.characterSprite;
+        
 
     }
     private void FixedUpdate()

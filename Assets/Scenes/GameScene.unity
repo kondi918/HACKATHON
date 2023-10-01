@@ -929,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663070047
 Transform:
   m_ObjectHideFlags: 0
@@ -2340,6 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaf3a4c164466041a96791c05d4a81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterDB: {fileID: 11400000, guid: fd49c4107297a4d41a2028f89f07580e, type: 2}
   hearthSprites:
   - {fileID: 21300000, guid: ce78032720386914095336c1c333a679, type: 3}
   - {fileID: 21300000, guid: d6c25afa3e8e9b3408f0809e4180d4f5, type: 3}
@@ -2883,9 +2884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5f201530ceb2f4baf9af2b7675a9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCooldown: 2
   attackCooldown: 0
   skills: []
-  attackSpeed: 8
+  projectileSpeed: 1
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 861124277}
   sawaAnimator: {fileID: 8610827467456417291}
