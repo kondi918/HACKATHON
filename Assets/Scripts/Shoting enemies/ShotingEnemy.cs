@@ -48,6 +48,7 @@ public class ShotingEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
         StartMovingModel();
     }
 
