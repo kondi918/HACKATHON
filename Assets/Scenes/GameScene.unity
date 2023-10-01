@@ -991,7 +991,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &406188132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,7 +1006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 2005402111}
   projectileExample: {fileID: 94056570}
-  reload: 1
   projectileSpeed: 10
   movingSpeed: 5
   player: {fileID: 6707842670011340904}
@@ -1307,7 +1306,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &790495445
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1367,7 +1366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 2005402111}
   projectileExample: {fileID: 1730345416}
-  reload: 1
   projectileSpeed: 10
   movingSpeed: 5
   player: {fileID: 6707842670011340904}
@@ -1485,7 +1483,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &870244131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1545,7 +1543,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 2005402111}
   projectileExample: {fileID: 1121315366}
-  reload: 1
   projectileSpeed: 10
   movingSpeed: 5
   player: {fileID: 6707842670011340904}
@@ -3086,7 +3083,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1934580100}
   - component: {fileID: 1934580101}
-  m_Layer: 0
+  - component: {fileID: 1934580102}
+  m_Layer: 8
   m_Name: LightningBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3130,6 +3128,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &1934580102
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934580099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -4.6448054}
+  serializedVersion: 2
+  m_Radius: 5.893967
 --- !u!1 &2005402109
 GameObject:
   m_ObjectHideFlags: 0
