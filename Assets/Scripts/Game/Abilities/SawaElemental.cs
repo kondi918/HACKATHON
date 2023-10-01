@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class SawaElemental : MonoBehaviour
 {
@@ -12,24 +13,44 @@ public class SawaElemental : MonoBehaviour
     [SerializeField] LayerMask[] enemyLayers;
     [SerializeField] float attackSpeed = 8f;
     [SerializeField] float attackCooldown = 2f;
+    [SerializeField] Rigidbody2D rb; 
+    private float movementSpeed = 5f;
 
+    private void StopMovement()
+    {
+        rb.velocity = Vector3.zero;
+    }
     private bool CheckDistanceToCharacter()
     {
-        if(Vector2.Distance(mainCharacter.position, transform.position) > 5)
+        if(Vector2.Distance(mainCharacter.position, transform.position) > 6)
         {
             return true;
         }
+        StopMovement();
         return false;
     }
     private void Shoot(GameObject enemy)
     {
-        Vector2 direction = enemy.transform.position - transform.position;
-        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        var bulletClone = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, rotation));
-        bulletClone.SetActive(true);
-        bulletClone.GetComponent<Rigidbody2D>().velocity += direction.normalized * attackSpeed;
-        Destroy(bulletClone, 5f);
-        attackCooldown = 2f * ParametersHandler.atackSpeedScale;
+        if(attackCooldown <= 0)
+        {
+            Vector2 direction = enemy.transform.position - transform.position;
+            float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            var bulletClone = Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, rotation));
+            bulletClone.SetActive(true);
+            bulletClone.GetComponent<Rigidbody2D>().velocity += direction.normalized * attackSpeed;
+            Destroy(bulletClone, 5f);
+            attackCooldown = 2f * ParametersHandler.atackSpeedScale;
+        }
+        else
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+    }
+    private void MoveToCharacter()
+    {
+        Vector2 direction = mainCharacter.position - transform.position;
+        direction.Normalize();
+        rb.velocity = direction * movementSpeed;
     }
     private void Mechanics()
     {
@@ -46,10 +67,14 @@ public class SawaElemental : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            MoveToCharacter();
+        }
     }
     void Update()
     {
-        CheckDistanceToCharacter();
+        isMovingToCharacter = CheckDistanceToCharacter();
         Mechanics();
     }
 }
