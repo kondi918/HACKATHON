@@ -4168,11 +4168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917802156464481909, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.99
+      value: 5.64
       objectReference: {fileID: 0}
     - target: {fileID: 4917802156464481909, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 5389223823525518791, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_Name
@@ -4818,6 +4818,8 @@ MonoBehaviour:
   animator: {fileID: 8610827467456417291}
   roomsOperator: {fileID: 1655998193}
   sr: {fileID: 2808012499865436824}
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0
