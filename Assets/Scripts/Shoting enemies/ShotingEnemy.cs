@@ -80,6 +80,9 @@ public class ShotingEnemy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        gameController.TestIfRoomClear();
+        if (gameController.TestIfRoomClear()) 
+        {
+            gameController.GoToNextRoom();
+        }
     }
 }

@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
         Debug.Log("Going to next room");
     }
 
-    public void TestIfRoomClear()
+    public bool TestIfRoomClear()
     {
         Transform[] transforms = rooms[currentRoom].GetComponentsInChildren<Transform>();
         bool roomIsClear = true;
@@ -53,10 +53,7 @@ public class GameController : MonoBehaviour
             }
         }
         
-        if (roomIsClear)
-        {
-            GoToNextRoom();
-        }
+        return roomIsClear;
     }
 
     IEnumerator LoadRoom()
