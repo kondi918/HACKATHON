@@ -27,19 +27,28 @@ public class UIController : MonoBehaviour
     private int curHealth = 6;
 
     [SerializeField] private Powerup[] skills;
+    [SerializeField] private Powerup[] skillsTwardowski;
+    [SerializeField] private Powerup[] skillsSawa;
 
 
     [SerializeField] GameObject player;
-    [SerializeField] GameObject[] abillities;
+    [SerializeField] GameObject[] sawaAbilities;
+    [SerializeField] GameObject[] twardowskiAbilities;
 
     [SerializeField] private Slider mainSkillCooldown;
-    [SerializeField] private GameObject mainSkill;
+    private GameObject mainSkill;
 
     [SerializeField] private Slider secondSkillCooldown;
-    [SerializeField] private GameObject secondSkill;
+    private GameObject secondSkill;
 
     [SerializeField] private GameObject[] skillDescriptions;
     private string mainAtackTwardtxt;
+    private string secondAtackTwardtxt;
+
+
+    private string mainAtackTxt;
+    private string secondAtackTxt;
+    private string extraAtackTxt;
     //private
     private bool showInfoIsActive = false;
 
@@ -48,6 +57,22 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a player";
+        secondAtackTwardtxt = "ThunderBolt" + "\n" + "Second attack skill of Twardowski. He calls a thunder to a small area.";
+        if (hero == 0)
+        {
+            skills = skillsTwardowski;
+            mainAtackTxt = mainAtackTwardtxt;
+            secondAtackTxt= secondAtackTwardtxt;
+            extraAtackTxt = "";
+            mainSkill = twardowskiAbilities[0];
+            secondSkill = twardowskiAbilities[1];
+        }
+        else
+        {
+            skills = skillsSawa;
+            //to do sawa like twardowski
+        }
         //creating hearths objects
         canvasTransform = GetComponent<Transform>();
         createHearths(3);
@@ -55,8 +80,6 @@ public class UIController : MonoBehaviour
         //creating coin object
         coin=Instantiate(coin, Vector3.zero, Quaternion.Euler(0,0,0));
         coin.transform.parent = canvasTransform;
-
-        mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a player";
 
     }
 
@@ -171,15 +194,15 @@ public class UIController : MonoBehaviour
         {
             case 0:
                 skillDescriptions[0].SetActive(true);
-                skillDescriptions[0].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                skillDescriptions[0].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTxt;
                 break;
             case 1:
                 skillDescriptions[1].SetActive(true);
-                skillDescriptions[1].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                skillDescriptions[1].GetComponentInChildren<TextMeshProUGUI>().text = secondAtackTxt;
                 break;
             case 2:
                 skillDescriptions[2].SetActive(true);
-                skillDescriptions[2].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                skillDescriptions[2].GetComponentInChildren<TextMeshProUGUI>().text = extraAtackTxt;
                 break;
         }
     }
@@ -208,8 +231,21 @@ public class UIController : MonoBehaviour
 
     private void skillbarsUpdate()
     {
-        mainSkillCooldown.value = mainSkill.GetComponent<TwardowskiMainAttack>().attackCooldown/ skills[0].GetCooldown();
-        if(mainSkillCooldown.value == 0)
+        switch (hero)
+        {
+            case 0:
+                mainSkillCooldown.value = mainSkill.GetComponent<TwardowskiMainAttack>().attackCooldown / skills[0].GetCooldown();
+
+                secondSkillCooldown.value = secondSkill.GetComponent<TwardowskiSpecialAttack>().attackCooldown / skills[1].GetCooldown();
+                break;
+            //change to sawa abilities skills
+            case 1:
+                mainSkillCooldown.value = mainSkill.GetComponent<TwardowskiMainAttack>().attackCooldown / skills[0].GetCooldown();
+
+                secondSkillCooldown.value = secondSkill.GetComponent<TwardowskiSpecialAttack>().attackCooldown / skills[1].GetCooldown();
+                break;
+        }
+        if (mainSkillCooldown.value == 0)
         {
             mainSkillCooldown.gameObject.SetActive(false);
         }
@@ -217,7 +253,6 @@ public class UIController : MonoBehaviour
         {
             mainSkillCooldown.gameObject.SetActive(true);
         }
-        secondSkillCooldown.value= secondSkill.GetComponent<TwardowskiSpecialAttack>().attackCooldown / skills[1].GetCooldown();
         if (secondSkillCooldown.value == 0)
         {
             secondSkillCooldown.gameObject.SetActive(false);
