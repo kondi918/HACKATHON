@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private List<GameObject> rooms;
     private int currentRoom = 0;
 
-
     public void dropCoin(GameObject monster)
     {
         int chance = Random.Range(0, 100);
@@ -27,6 +26,18 @@ public class GameController : MonoBehaviour
         if (chance > 90)
         {
             Instantiate(extraSkill, monster.transform.position, Quaternion.Euler(0, 0, 0));
+        }
+    }
+
+    public void SetCurrentRoom(int roomIndex)
+    {
+        if (roomIndex < rooms.Count) 
+        {
+            currentRoom = roomIndex;
+        }
+        else
+        {
+            Debug.Log("Index out off bounds");
         }
     }
 

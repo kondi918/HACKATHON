@@ -7,12 +7,13 @@ public class Boss : MonoBehaviour
     [SerializeField] GameObject pudieSidekick;
     [SerializeField] GameObject shootingSidekick;
     [SerializeField] GameController gameController;
-    float summonCD = 5;
+    [SerializeField] GameObject room;
+    float summonCD = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameController.SetCurrentRoom(1);
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Boss : MonoBehaviour
         {
             summonCD -= Time.deltaTime;
         }
-        if (summonCD <= 0 && gameController.TestIfRoomClear())
+        else if (gameController.TestIfRoomClear())
         {
             SummonSidekicks();
         }
@@ -33,12 +34,14 @@ public class Boss : MonoBehaviour
         SummonSidekick(pudieSidekick);
         SummonSidekick(pudieSidekick);
         SummonSidekick(shootingSidekick);
+        summonCD = 10f;
     }
 
     void SummonSidekick(GameObject sidekick)
     {
         GameObject newSidekick = Instantiate(sidekick);
+        newSidekick.transform.SetParent(room.transform);
         newSidekick.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8));
-        sidekick.SetActive(true);
+        newSidekick.SetActive(true);
     }
 }
