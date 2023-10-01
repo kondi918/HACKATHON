@@ -29,6 +29,13 @@ public class UIController : MonoBehaviour
 
 
     [SerializeField] GameObject player;
+    [SerializeField] GameObject[] abillities;
+
+    [SerializeField] private Slider mainSkillCooldown;
+    [SerializeField] private GameObject mainSkill;
+
+    [SerializeField] private Slider secondSkillCooldown;
+    [SerializeField] private GameObject secondSkill;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +58,7 @@ public class UIController : MonoBehaviour
         updateHealth(health);
         updateCoins(coinCount);
         updateSkills();
+        skillbarsUpdate();
         
     }
 
@@ -145,6 +153,28 @@ public class UIController : MonoBehaviour
         int additionalX = value.ToString().Length;
         float xCoordinate = -(88 + (additionalX - 1) * 20);
         coin.GetComponent<RectTransform>().anchoredPosition = new Vector3(xCoordinate, -50f, 0f);
+    }
+
+    private void skillbarsUpdate()
+    {
+        mainSkillCooldown.value = mainSkill.GetComponent<TwardowskiMainAttack>().attackCooldown/ skills[0].GetCooldown();
+        if(mainSkillCooldown.value == 0)
+        {
+            mainSkillCooldown.gameObject.SetActive(false);
+        }
+        else
+        {
+            mainSkillCooldown.gameObject.SetActive(true);
+        }
+        secondSkillCooldown.value= secondSkill.GetComponent<TwardowskiSpecialAttack>().attackCooldown / skills[1].GetCooldown();
+        if (secondSkillCooldown.value == 0)
+        {
+            secondSkillCooldown.gameObject.SetActive(false);
+        }
+        else
+        {
+            secondSkillCooldown.gameObject.SetActive(true);
+        }
     }
 
 }

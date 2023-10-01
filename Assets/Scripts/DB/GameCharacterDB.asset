@@ -15,6 +15,9 @@ MonoBehaviour:
   character:
   - characterSprite: {fileID: 21300000, guid: 17f5a1023bc3c3840bc51aa285741991, type: 3}
     characterName: Twardowski
+    specialAbilitySprite: {fileID: 21300000, guid: 5c616d82bc3aac3488134f429e4e5008, type: 3}
+    animator: {fileID: 9100000, guid: 0cadac8647a01be4a917e714da87066a, type: 2}
+  - characterSprite: {fileID: 21300000, guid: f4c0294768a2a22408f16ae102c98c57, type: 3}
+    characterName: Sawa
     specialAbilitySprite: {fileID: 0}
-    bonusAbilitySprite: {fileID: 0}
-    mainAttack: {fileID: 7847479724497128738, guid: e5a3c8052709eb442a6126b9d1644ec8, type: 3}
+    animator: {fileID: 9100000, guid: 16b22d65c9a890a40851e6aceb2986c9, type: 2}
