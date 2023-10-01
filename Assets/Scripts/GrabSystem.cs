@@ -17,7 +17,7 @@ public class GrabSystem : MonoBehaviour
         else if (collision.gameObject.tag == "Coin")
         {
             Destroy(collision.gameObject);
-            Debug.Log("Increase money counter");
+            MainCharacter.coinCount++;
         }
     }
 

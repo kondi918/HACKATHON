@@ -21,7 +21,6 @@ public class UIController : MonoBehaviour
     
     private Transform canvasTransform;
     private int health = 6;
-    private int coinCount = 100;
     private int maxHealth = 10;
     private int curHealth = 6;
 
@@ -56,7 +55,7 @@ public class UIController : MonoBehaviour
         health = player.GetComponent<MainCharacter>().currentHealth;
         //testing
         updateHealth(health);
-        updateCoins(coinCount);
+        updateCoins(MainCharacter.coinCount);
         updateSkills();
         skillbarsUpdate();
         
@@ -117,7 +116,7 @@ public class UIController : MonoBehaviour
                 continue;
                 
             }
-            if (coinCount >= skills[i].getCurrentUpgradeCost())
+            if (MainCharacter.coinCount >= skills[i].getCurrentUpgradeCost())
             {
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = true;
                 makeSkillActive(i);
@@ -127,7 +126,7 @@ public class UIController : MonoBehaviour
                 skillsIcons[i].GetComponent<SkillUpgrade>().isClicked = false;
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = false;
                 makeSkillUnactive(i);
-                coinCount -= skills[i].getCurrentUpgradeCost();
+                MainCharacter.coinCount -= skills[i].getCurrentUpgradeCost();
                 skills[i].skillLevel++;
             }
         }
