@@ -15,15 +15,25 @@ public class SawaElemental : MonoBehaviour
     [SerializeField] float attackCooldown = 2f;
     [SerializeField] Rigidbody2D rb; 
     private float movementSpeed = 5f;
+    private float stopTimer = 0.5f;
 
     private void StopMovement()
     {
-        rb.velocity = Vector3.zero;
+        if (stopTimer < 0)
+        {
+            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            stopTimer -= Time.deltaTime;
+        }
+
     }
     private bool CheckDistanceToCharacter()
     {
-        if(Vector2.Distance(mainCharacter.position, transform.position) > 6)
+        if(Vector2.Distance(mainCharacter.position, transform.position) > 8)
         {
+            stopTimer = Random.Range(0.5f, 1.5f);
             return true;
         }
         StopMovement();

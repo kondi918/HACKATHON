@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject extraSkill;
     [SerializeField] private List<GameObject> rooms;
+    [SerializeField] GameObject TwardowskiSkills;
+    [SerializeField] GameObject SawaSkills;
     public int currentRoom = 0;
 
     public void dropCoin(GameObject monster)
@@ -45,9 +47,23 @@ public class GameController : MonoBehaviour
     {
         return rooms[currentRoom];
     }
+    private void SetActiveSkills()
+    {
+        if(SettingsController.chosenCharacter == 0)
+        {
+            TwardowskiSkills.SetActive(true);
+            SawaSkills.SetActive(false);
+        }
+        else
+        {
+            SawaSkills.SetActive(true);
+            TwardowskiSkills.SetActive(false);
+        }
+    }
 
     private void Start()
     {
+        SetActiveSkills();
         StartCoroutine(LoadRoom());
     }
 
