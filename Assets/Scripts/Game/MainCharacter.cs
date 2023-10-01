@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
@@ -25,7 +24,14 @@ public class MainCharacter : MonoBehaviour
     void Start()
     {
         character = characterDB.GetCharacter(SettingsController.chosenCharacter);
-        animator.runtimeAnimatorController = character.animator;
+        if(SettingsController.chosenCharacter == 0 )
+        {
+            animator.runtimeAnimatorController = Resources.Load("TwardowskiController") as RuntimeAnimatorController;
+        }
+        else
+        {
+            animator.runtimeAnimatorController = Resources.Load("SawaController") as RuntimeAnimatorController;
+        }
         gameObject.GetComponent<SpriteRenderer>().sprite = character.characterSprite;
 
     }
