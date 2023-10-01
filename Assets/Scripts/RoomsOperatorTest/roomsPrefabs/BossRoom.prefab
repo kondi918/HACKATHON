@@ -140,9 +140,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4830968121077250657}
   - component: {fileID: 5625945278536808155}
-  - component: {fileID: 5167857405356705995}
   - component: {fileID: 6058572527972722154}
-  m_Layer: 0
+  - component: {fileID: 1873881356428809676}
+  m_Layer: 10
   m_Name: boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,29 +216,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &5167857405356705995
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620259688796141868}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.75
-  m_Height: 3.77
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6058572527972722154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +236,41 @@ MonoBehaviour:
   projectileSpeed: 10
   movingSpeed: 1
   player: {fileID: 0}
+--- !u!70 &1873881356428809676
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620259688796141868}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000019073486, y: 0}
+  m_Size: {x: 1.5, y: 3.77}
+  m_Direction: 0
 --- !u!1 &890235000162959019
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +563,7 @@ GameObject:
   - component: {fileID: 4741444360546610096}
   - component: {fileID: 666129368547480870}
   m_Layer: 12
-  m_Name: bossRoom
+  m_Name: BossRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1158,6 +1170,8 @@ MonoBehaviour:
   projectileSpeed: 10
   movingSpeed: 5
   player: {fileID: 0}
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!61 &8345188112482174960
 BoxCollider2D:
   m_ObjectHideFlags: 0

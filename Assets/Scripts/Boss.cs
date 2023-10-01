@@ -18,13 +18,25 @@ public class Boss : MonoBehaviour
     [SerializeField] float movingSpeed = 1f;
 
     [SerializeField] public GameObject player;
+    int hp = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(shoting());
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "FriendlyBullet")
+        {
+            Destroy(collision.gameObject);
+            hp--;
+           if(hp == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
