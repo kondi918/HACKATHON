@@ -2362,6 +2362,8 @@ MonoBehaviour:
   skillsSawa:
   - {fileID: 11400000, guid: fa0e3fa3b8f6db64bb9833a97caecc38, type: 2}
   - {fileID: 11400000, guid: 3db0a22e331db8c469862b7a78942d06, type: 2}
+  fir: {fileID: 11400000, guid: 23c67d8e3961fee4abd60ce857f12339, type: 2}
+  wat: {fileID: 11400000, guid: fa0e3fa3b8f6db64bb9833a97caecc38, type: 2}
   player: {fileID: 6707842670011340904}
   sawaAbilities:
   - {fileID: 1555190890}
@@ -2642,7 +2644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCooldown: 0
   attackCooldown: 5
-  attackSpeed: 1
   bullet: {fileID: 1934580099}
   twardowskiAnimator: {fileID: 8610827467456417291}
 --- !u!1001 &1530876725
@@ -4501,12 +4502,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aaa8f7a2799104b9f87fd8a637fc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCooldown: 2
   attackCooldown: 0
   skills:
   - {fileID: 1311205646}
   - {fileID: 143677588}
   - {fileID: 1410289224}
-  attackSpeed: 8
+  projectileSpeed: 1
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 8481196520164725859}
   twardowskiAnimator: {fileID: 8610827467456417291}

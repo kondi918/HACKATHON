@@ -33,6 +33,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private Powerup[] skillsTwardowski;
     [SerializeField] private Powerup[] skillsSawa;
 
+    [SerializeField] private Fireball fir;
+    [SerializeField] private Watershot wat;
+
+
 
     [SerializeField] GameObject player;
     [SerializeField] GameObject[] sawaAbilities;
@@ -48,6 +52,9 @@ public class UIController : MonoBehaviour
     private string mainAtackTwardtxt;
     private string secondAtackTwardtxt;
 
+    private string mainAtackSawatxt;
+    private string secondAtackSawatxt;
+
 
     private string mainAtackTxt;
     private string secondAtackTxt;
@@ -60,11 +67,14 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         character=characterDB.GetCharacter(SettingsController.chosenCharacter);
         skillsIcons[0].GetComponent<Image>().sprite = character.normalAbilitySprite;
         skillsIcons[1].GetComponent<Image>().sprite = character.specialAbilitySprite;
-        mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a player";
+        mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a cursor.";
         secondAtackTwardtxt = "ThunderBolt" + "\n" + "Second attack skill of Twardowski. He calls a thunder to a small area.";
+        mainAtackSawatxt = "Waterbalt" + "\n" + "The main attack of Sawa. She throws a water splash in a direction of a cursor.";
+        secondAtackSawatxt = "Water Elemental" + "\n" + "Second attack skill of Sawa. She calls a water elemental that shoot to an enemy.";
         if (hero == 0)
         {
             skills = skillsTwardowski;
@@ -77,8 +87,8 @@ public class UIController : MonoBehaviour
         else
         {
             skills = skillsSawa;
-            mainAtackTxt = mainAtackTwardtxt;
-            secondAtackTxt = secondAtackTwardtxt;
+            mainAtackTxt = mainAtackSawatxt;
+            secondAtackTxt = secondAtackSawatxt;
             extraAtackTxt = "";
             mainSkill = sawaAbilities[0];
             secondSkill= sawaAbilities[1];
@@ -189,8 +199,31 @@ public class UIController : MonoBehaviour
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = true;
                 makeSkillActive(i);
             }
+            
             if (skillsIcons[i].GetComponent<SkillUpgrade>().isClicked == true)
             {
+                switch (SettingsController.chosenCharacter) {
+                    case 0:
+                        if (i==0)
+                        {
+                            twardowskiAbilities[i].GetComponent<TwardowskiMainAttack>().UpgradeSkill(fir.GetProjectileSpped(), skills[i].GetCooldown());
+                        }
+                        else if (i==1)
+                        {
+                            twardowskiAbilities[i].GetComponent<TwardowskiSpecialAttack>().UpgradeSkill(skills[i].GetCooldown());
+                        }
+                        break;
+                    case 1:
+                        if (i==0)
+                        {
+                            sawaAbilities[i].GetComponent<SawaMainAttack>().UpgradeSkill(wat.GetProjectileSpped(), skills[i].GetCooldown());
+                        }
+                        else if (i == 1)
+                        {
+                            sawaAbilities[i].GetComponent<SawaSpecialAbility>().UpgradeSkill(skills[i].GetCooldown());
+                        }
+                        break;
+                }
                 skillsIcons[i].GetComponent<SkillUpgrade>().isClicked = false;
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = false;
                 makeSkillUnactive(i);
