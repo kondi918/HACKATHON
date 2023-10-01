@@ -9,6 +9,8 @@ public class SawaSpecialAbility : MonoBehaviour
     [SerializeField] GameObject waterElemental;
     [SerializeField] Animator sawaAnimator;
     [SerializeField] Transform mainCharacter;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
     private void CheckCooldown()
     {
@@ -26,6 +28,8 @@ public class SawaSpecialAbility : MonoBehaviour
             Destroy(bulletClone, 15f);
             attackCooldown = defaultCooldown;
             sawaAnimator.Play("SawaAttack");
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
     private void CheckInput()

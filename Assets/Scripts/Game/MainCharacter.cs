@@ -14,6 +14,8 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] RoomsOperator roomsOperator;
     [SerializeField] SpriteRenderer sr;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
     private float timeOfInvicibility=1.0f;
     private bool isInvincible = false;
@@ -43,6 +45,8 @@ public class MainCharacter : MonoBehaviour
         {
             currentHealth -= 1;
             StartCoroutine(InvincibilityCoroutine(timeOfInvicibility));
+            audioSource.clip = clip;
+            audioSource.Play();
         }
         if (LayerMask.LayerToName(collision.gameObject.layer)=="Door" && roomsOperator.checkRoom())
         {

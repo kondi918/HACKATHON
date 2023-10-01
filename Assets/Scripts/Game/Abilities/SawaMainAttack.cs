@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SawaMainAttack : MonoBehaviour
@@ -11,6 +12,8 @@ public class SawaMainAttack : MonoBehaviour
     [SerializeField] Transform mainCharacterTransform;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator sawaAnimator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
     private void CheckCooldown()
     {
@@ -34,6 +37,8 @@ public class SawaMainAttack : MonoBehaviour
                 Destroy(bulletClone, 5f);
                 attackCooldown = defaultCooldown;
                 sawaAnimator.Play("SawaAttack");
+                audioSource.clip = clip;
+                audioSource.Play();
             }
         }
     }

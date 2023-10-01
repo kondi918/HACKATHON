@@ -14,6 +14,8 @@ public class ShotingEnemy : MonoBehaviour
     [SerializeField] float movingSpeed = 1f;
 
     [SerializeField] public GameObject player;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
 
     void Start()
@@ -30,6 +32,8 @@ public class ShotingEnemy : MonoBehaviour
         projectile.SetActive(true);
         projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * projectileSpeed * -1;
         Destroy(projectile, 5f);
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     void Dying()

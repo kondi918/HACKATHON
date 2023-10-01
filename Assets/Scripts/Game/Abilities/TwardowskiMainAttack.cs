@@ -11,6 +11,8 @@ public class TwardowskiMainAttack : MonoBehaviour
     [SerializeField] Transform mainCharacterTransform;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
     private void CheckCooldown()
     {
@@ -34,6 +36,8 @@ public class TwardowskiMainAttack : MonoBehaviour
                 Destroy(bulletClone, 5f);
                 attackCooldown = defaultCooldown;
                 twardowskiAnimator.Play("TwardowskiFireBall");
+                audioSource.clip = clip;
+                audioSource.Play();
             }
         }
     }

@@ -8,6 +8,8 @@ public class TwardowskiSpecialAttack : MonoBehaviour
     public float attackCooldown = 0;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clip;
 
     private void CheckCooldown()
     {
@@ -28,6 +30,8 @@ public class TwardowskiSpecialAttack : MonoBehaviour
             attackCooldown = defaultCooldown;
             twardowskiAnimator.Play("TwardowskiLightningBoltCharacter");
             bulletClone.GetComponent<Animator>().Play("TwardowskiLightningBolt");
+            audioSource.clip = clip;
+            audioSource.Play();
         }
     }
     private void CheckInput()
