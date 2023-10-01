@@ -18,7 +18,7 @@ public class MainCharacter : MonoBehaviour
 
     private float timeOfInvicibility=1.0f;
     private bool isInvincible = false;
-    public static int coinCount = 100;
+    public static int coinCount = 0;
 
     // Start is called before the first frame update
     void Start()
