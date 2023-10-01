@@ -1,9 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting;
 
 public class UIController : MonoBehaviour
 {
@@ -21,7 +23,6 @@ public class UIController : MonoBehaviour
     
     private Transform canvasTransform;
     private int health = 6;
-    private int coinCount = 100;
     private int maxHealth = 10;
     private int curHealth = 6;
 
@@ -37,6 +38,13 @@ public class UIController : MonoBehaviour
     [SerializeField] private Slider secondSkillCooldown;
     [SerializeField] private GameObject secondSkill;
 
+    [SerializeField] private GameObject[] skillDescriptions;
+    private string mainAtackTwardtxt;
+    //private
+    private bool showInfoIsActive = false;
+
+    private int hero = SettingsController.chosenCharacter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +56,8 @@ public class UIController : MonoBehaviour
         coin=Instantiate(coin, Vector3.zero, Quaternion.Euler(0,0,0));
         coin.transform.parent = canvasTransform;
 
+        mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a player";
+
     }
 
     // Update is called once per frame
@@ -55,10 +65,18 @@ public class UIController : MonoBehaviour
     {
         health = player.GetComponent<MainCharacter>().currentHealth;
         //testing
+        showInfoIsActive = false;
         updateHealth(health);
-        updateCoins(coinCount);
+        updateCoins(MainCharacter.coinCount);
         updateSkills();
         skillbarsUpdate();
+        if (!showInfoIsActive) {
+        
+                foreach (GameObject description in skillDescriptions)
+                {
+                    description.SetActive(false);
+                }
+        }
         
     }
 
@@ -111,13 +129,26 @@ public class UIController : MonoBehaviour
     {
         for(int i = 0; i<skillsIcons.Length; i++)
         {
-            if (skillsIcons[i].active!=true || skills[i].skillLevel == skills[i].skillMaxLevel)
+            Vector3 positionOfMouse = Input.mousePosition;
+            positionOfMouse.x -= skillsIcons[i].GetComponent<RectTransform>().sizeDelta.x*1.5f;
+            Vector3 posOfSkil = skillsIcons[i].transform.position;
+            posOfSkil -= new Vector3(skillsIcons[i].GetComponent<RectTransform>().sizeDelta.x, skillsIcons[i].GetComponent<RectTransform>().sizeDelta.y / 2);
+            Vector3 posOfSkil2 = new Vector3(posOfSkil.x - skillsIcons[i].GetComponent<RectTransform>().sizeDelta.x, posOfSkil.y + skillsIcons[i].GetComponent<RectTransform>().sizeDelta.y);
+            if (positionOfMouse.x < posOfSkil.x && positionOfMouse.x > posOfSkil2.x && positionOfMouse.y > posOfSkil.y && positionOfMouse.y < posOfSkil2.y)
+            {
+                if (skillsIcons[i].active == true)
+                {
+                    showInfo(i);
+                }
+                
+            }
+                if (skillsIcons[i].active!=true || skills[i].skillLevel == skills[i].skillMaxLevel)
             {
                 makeSkillUnactive(i);
                 continue;
                 
             }
-            if (coinCount >= skills[i].getCurrentUpgradeCost())
+            if (MainCharacter.coinCount >= skills[i].getCurrentUpgradeCost())
             {
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = true;
                 makeSkillActive(i);
@@ -127,9 +158,29 @@ public class UIController : MonoBehaviour
                 skillsIcons[i].GetComponent<SkillUpgrade>().isClicked = false;
                 skillsIcons[i].GetComponent<SkillUpgrade>().isActive = false;
                 makeSkillUnactive(i);
-                coinCount -= skills[i].getCurrentUpgradeCost();
+                MainCharacter.coinCount -= skills[i].getCurrentUpgradeCost();
                 skills[i].skillLevel++;
             }
+        }
+    }
+
+    private void showInfo(int option)
+    {
+        showInfoIsActive = true;
+        switch (option)
+        {
+            case 0:
+                skillDescriptions[0].SetActive(true);
+                skillDescriptions[0].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                break;
+            case 1:
+                skillDescriptions[1].SetActive(true);
+                skillDescriptions[1].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                break;
+            case 2:
+                skillDescriptions[2].SetActive(true);
+                skillDescriptions[2].GetComponentInChildren<TextMeshProUGUI>().text = mainAtackTwardtxt;
+                break;
         }
     }
 
