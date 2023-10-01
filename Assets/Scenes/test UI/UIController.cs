@@ -10,6 +10,9 @@ using Unity.VisualScripting;
 public class UIController : MonoBehaviour
 {
 
+    GameCharacter character;
+    [SerializeField] GameCharacterDB characterDB;
+
     [SerializeField] private Sprite[] hearthSprites;
     [SerializeField] private GameObject hearth;
     private List<GameObject> hearthsOnScreen = new List<GameObject>();
@@ -57,6 +60,9 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        character=characterDB.GetCharacter(SettingsController.chosenCharacter);
+        skillsIcons[0].GetComponent<Image>().sprite = character.normalAbilitySprite;
+        skillsIcons[1].GetComponent<Image>().sprite = character.specialAbilitySprite;
         mainAtackTwardtxt = "Fireball" + "\n" + "The main attack of Twardowski. He throws a fireball in a direction of a player";
         secondAtackTwardtxt = "ThunderBolt" + "\n" + "Second attack skill of Twardowski. He calls a thunder to a small area.";
         if (hero == 0)
