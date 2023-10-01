@@ -2883,6 +2883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5f201530ceb2f4baf9af2b7675a9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 0
   skills: []
   attackSpeed: 8
   mainCharacterTransform: {fileID: 8672103736689224103}
@@ -3633,6 +3634,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: room
       objectReference: {fileID: 0}
+    - target: {fileID: 347846101289947996, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3013cd45471ab3744872fa47b587fa9a, type: 3}
     - target: {fileID: 757128543762004879, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3640,6 +3645,14 @@ PrefabInstance:
     - target: {fileID: 1058029531038875255, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_Name
       value: Smuglik
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413305663805770595, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413305663805770595, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: 2356281986406026578, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: player
@@ -3725,6 +3738,14 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 2005402111}
+    - target: {fileID: 4790413064971491677, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790413064971491677, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.23
+      objectReference: {fileID: 0}
     - target: {fileID: 4917802156464481909, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.34217
@@ -3735,11 +3756,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917802156464481909, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.31
+      value: 5.99
       objectReference: {fileID: 0}
     - target: {fileID: 4917802156464481909, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.35
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 5389223823525518791, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_Name
@@ -3749,6 +3770,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7ea4c27bc3acacc4a9edb940ae488578, type: 3}
+    - target: {fileID: 6515219913282160626, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515219913282160626, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.23
+      objectReference: {fileID: 0}
     - target: {fileID: 6614597727056871897, guid: f0c887b5d520b8f46b93b8d6000c8485, type: 3}
       propertyPath: m_Color.b
       value: 0.14581703
