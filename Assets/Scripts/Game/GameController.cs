@@ -41,6 +41,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public GameObject GetCurrentRoom()
+    {
+        return rooms[currentRoom];
+    }
+
     private void Start()
     {
         StartCoroutine(LoadRoom());

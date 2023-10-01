@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+    [SerializeField] GameController gameController;
     [SerializeField] ChasePlayer chasePlayer;
-    [SerializeField] GameObject monstersGroup;
+    GameObject monstersGroup;
     private Transform[] enemyTransforms;
 
     // Start is called before the first frame update
     void Start()
     {
+        monstersGroup = gameController.GetCurrentRoom();
         Vector3 posIncrease = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0);
         gameObject.transform.position += posIncrease;
 
