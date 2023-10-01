@@ -22,7 +22,6 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController.SetCurrentRoom(1);
         StartCoroutine(shoting());
     }
 
@@ -33,10 +32,25 @@ public class Boss : MonoBehaviour
         {
             summonCD -= Time.deltaTime;
         }
-        else if (gameController.TestIfRoomClear())
+        else if (TestIfRoomClear())
         {
             SummonSidekicks();
         }
+    }
+    private bool TestIfRoomClear()
+    {
+        Transform[] transforms = room.GetComponentsInChildren<Transform>();
+        bool roomIsClear = true;
+
+        foreach (Transform t in transforms)
+        {
+            if (LayerMask.LayerToName(t.gameObject.layer) == "Enemy")
+            {
+                roomIsClear = false;
+            }
+        }
+
+        return roomIsClear;
     }
 
     void SummonSidekicks()
