@@ -15,6 +15,9 @@ public class Powerup : ScriptableObject
 
     [SerializeField]
     private PowerupStats projectileDamage;
+    
+    [SerializeField]
+    private PowerupStats cooldown;
 
     public int getCurrentUpgradeCost()
     {
@@ -22,4 +25,5 @@ public class Powerup : ScriptableObject
     }
 
     public float GetProjectileDamage() { return projectileDamage.GetValue(skillLevel); }
+    public float GetCooldown() { return cooldown.GetValue(skillLevel); }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86045e74fbe5abe478d7927b26e24332, type: 3}
-  m_Name: ElementalDamage
+  m_Name: ElementalCooldown
   m_EditorClassIdentifier: 
   values:
-  - 1
-  - 1
-  - 1
-  - 2
+  - 10
+  - 8
+  - 6
+  - 4
   - 2
