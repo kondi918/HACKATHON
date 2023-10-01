@@ -15,6 +15,8 @@ MonoBehaviour:
   upgradesCosts: 0a000000140000001e0000002800000032000000
   skillLevel: 0
   skillMaxLevel: 5
+  projectileDamage: {fileID: 11400000, guid: 36222da2ed34e7644ad277209fab3987, type: 2}
+  cooldown: {fileID: 11400000, guid: 234ae68f1a868e949bfce92c1275dd30, type: 2}
   attackSpeed: {fileID: 11400000, guid: 2dcef859bfad97f4793d75f14eaa93db, type: 2}
   durability: {fileID: 11400000, guid: 0f0652a7a9b2b664cbf5e315b46a7745, type: 2}
   projectileCount: {fileID: 11400000, guid: 0ee05eb1b37ff414fba8b27bf2b8bbef, type: 2}
