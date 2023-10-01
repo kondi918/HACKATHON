@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TwardowskiSpecialAttack : MonoBehaviour
 {
-    private float attackCooldown = 0;
+    [SerializeField] float defaultCooldown;         // ZROBIÆ VOID START Z PRZYPISYWANIEM attackCooldown = defaultCooldown
+    private float attackCooldown = 5;
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;
@@ -25,7 +26,7 @@ public class TwardowskiSpecialAttack : MonoBehaviour
             var bulletClone = Instantiate(bullet, lightningBoltSpawn, Quaternion.identity);
             bulletClone.SetActive(true);
             Destroy(bulletClone, 0.4f);
-            attackCooldown = 5f;
+            attackCooldown = 5 * ParametersHandler.atackSpeedScale;
             twardowskiAnimator.Play("TwardowskiLightningBoltCharacter");
             bulletClone.GetComponent<Animator>().Play("TwardowskiLightningBolt");
         }
