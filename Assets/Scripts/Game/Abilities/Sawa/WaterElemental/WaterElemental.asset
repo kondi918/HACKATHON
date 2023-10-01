@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaterElemental
   m_EditorClassIdentifier: 
   upgradesCosts: 0a000000140000001e0000002800000032000000
-  skillLevel: 0
+  skillLevel: 1
   skillMaxLevel: 5
   projectileDamage: {fileID: 11400000, guid: 36222da2ed34e7644ad277209fab3987, type: 2}
   cooldown: {fileID: 11400000, guid: 234ae68f1a868e949bfce92c1275dd30, type: 2}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
@@ -12,6 +13,7 @@ public class MainCharacter : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator animator;
     [SerializeField] RoomsOperator roomsOperator;
+    [SerializeField] SpriteRenderer sr;
 
     private float timeOfInvicibility=1.0f;
     private bool isInvincible = false;
@@ -21,12 +23,13 @@ public class MainCharacter : MonoBehaviour
     void Start()
     {
         character = characterDB.GetCharacter(SettingsController.chosenCharacter);
+        animator.runtimeAnimatorController = character.animator;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(LayerMask.LayerToName(collision.gameObject.layer) == "EnemyBullet" && !isInvincible)
         {
-            Debug.Log("TUTAJ DODAC ODEJMOWANIE HP");
             currentHealth -= 1;
             Destroy(collision.gameObject);
             StartCoroutine(InvincibilityCoroutine(timeOfInvicibility));
@@ -62,6 +65,7 @@ public class MainCharacter : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        sr.sprite = character.characterSprite;
 
     }
     private void FixedUpdate()

@@ -9,5 +9,7 @@ public class GameCharacter
     public Sprite characterSprite; 
     public string characterName;
     public Sprite specialAbilitySprite;
+    public Sprite normalAbilitySprite;
     public AnimatorController animator;
+    public Powerup[] skills;
 }

@@ -4267,6 +4267,7 @@ MonoBehaviour:
   rb: {fileID: 503886345611829177}
   animator: {fileID: 8610827467456417291}
   roomsOperator: {fileID: 1655998193}
+  sr: {fileID: 2808012499865436824}
 --- !u!212 &2808012499865436824
 SpriteRenderer:
   m_ObjectHideFlags: 0

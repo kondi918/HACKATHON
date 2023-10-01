@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Watershot
   m_EditorClassIdentifier: 
   upgradesCosts: 050000000a0000000f0000001400000019000000
-  skillLevel: 0
+  skillLevel: 1
   skillMaxLevel: 5
   projectileDamage: {fileID: 11400000, guid: 12b34645c244a6140ab06e5ec8bc57a5, type: 2}
   cooldown: {fileID: 11400000, guid: e1423ff90d9bb3041a62b19aab89f48c, type: 2}
