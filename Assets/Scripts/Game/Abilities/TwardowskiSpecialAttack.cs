@@ -5,7 +5,7 @@ using UnityEngine;
 public class TwardowskiSpecialAttack : MonoBehaviour
 {
     [SerializeField] float defaultCooldown;         // ZROBIÆ VOID START Z PRZYPISYWANIEM attackCooldown = defaultCooldown
-    private float attackCooldown = 5;
+    public float attackCooldown = 5;
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;
