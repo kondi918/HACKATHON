@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SawaSpecialAbility : MonoBehaviour
 {
-    [SerializeField] float defaultCooldown;         // ZROBIÆ VOID START Z PRZYPISYWANIEM attackCooldown = defaultCooldown
-    public float attackCooldown = 5;
+    public float defaultCooldown = 20;         // ZROBIÆ VOID START Z PRZYPISYWANIEM attackCooldown = defaultCooldown
+    public float attackCooldown = 0;
     [SerializeField] GameObject waterElemental;
     [SerializeField] Animator sawaAnimator;
     [SerializeField] Transform mainCharacter;
@@ -24,7 +24,7 @@ public class SawaSpecialAbility : MonoBehaviour
             var bulletClone = Instantiate(waterElemental, mainCharacter.transform.position, Quaternion.identity);
             bulletClone.SetActive(true);
             Destroy(bulletClone, 15f);
-            attackCooldown = 20 * ParametersHandler.atackSpeedScale;
+            attackCooldown = defaultCooldown;
             sawaAnimator.Play("SawaAttack");
         }
     }
@@ -34,6 +34,10 @@ public class SawaSpecialAbility : MonoBehaviour
         {
             Shoot();
         }
+    }
+    public void UpgradeSkill(float skillCooldown)
+    {
+        defaultCooldown = skillCooldown;
     }
     void Update()
     {

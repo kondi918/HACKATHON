@@ -929,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663070047
 Transform:
   m_ObjectHideFlags: 0
@@ -2883,9 +2883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5f201530ceb2f4baf9af2b7675a9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCooldown: 2
   attackCooldown: 0
   skills: []
-  attackSpeed: 8
+  projectileSpeed: 1
   mainCharacterTransform: {fileID: 8672103736689224103}
   bullet: {fileID: 861124277}
   sawaAnimator: {fileID: 8610827467456417291}
