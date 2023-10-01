@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TwardowskiMainAttack : MonoBehaviour
 {
-    private float attackCooldown = 0;
+    public float attackCooldown = 0;
     [SerializeField] GameObject[] skills;
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] Transform mainCharacterTransform;

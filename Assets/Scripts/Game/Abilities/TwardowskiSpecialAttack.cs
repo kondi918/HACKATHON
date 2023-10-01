@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TwardowskiSpecialAttack : MonoBehaviour
 {
-    private float attackCooldown = 0;
+    public float attackCooldown = 0;
     [SerializeField] float attackSpeed = 1f;
     [SerializeField] GameObject bullet;
     [SerializeField] Animator twardowskiAnimator;
